@@ -1,21 +1,44 @@
-//
-var pacientes = document.querySelector(".titulo-segundario");
+//esse bloco vai alterar o nome do titulo e substitulo
+var tSegundario = document.querySelector(".titulo-segundario");
 var titulo = document.querySelector(".titulo");
-pacientes.textcontent = "meus pacientes";
-pacientes.textcontent = "Eduardo nutri";
+tSegundario.textcontent = "meus pacientes";
+titulo.textcontent = "Eduardo nutri";
 
-//
-var paciente = document.querySelector("#primeiro-paciente");
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
+//esse vai criar variavel buscar id do primeiro paciente e acessa o peso do primeiro paciente 
+var pacientes = document.querySelectorAll(".paciente");
 
-//
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
+for(var i = 0; i < pacientes.length; i++){
+    var paciente = pacientes[i];
+  
+    var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
+    
+    //buscar o elemento da altura e altera seu conteudo
+    var tdAltura = paciente.querySelector(".info-altura");
+    var altura = tdAltura.textContent;
+    
+    //calcule o IMC e altera no elemento
+    var IMC = peso / (altura * altura);
+    
+    //valores booleanos
+    var pesoValido = true;
+    var alturaValida = true;
+    
+    //alerta caso peso e altura sejam invalidos
+    if(peso <= 0 || peso >= 1000 ){
+        var pesoValido = false;
+         alert("peso invalido!");
+      }
+    
+    if (altura <= 0 || altura >= 3.00 ){
+        var alturaValida = false;
+        alert("altura invalida!")
+     }
+     if(pesoValido && alturaValida)
+        {var tdIMC = paciente.querySelector(".info-imc");
+        tdIMC.textContent = IMC.toFixed(2);
+    }
+    
+}
 
-//
-var IMC = peso / (altura * altura);
-var tdIMC = paciente.querySelector(".info-imc");
-tdIMC.textContent = IMC;
 
-console.log(IMC);
