@@ -23,21 +23,25 @@ for(var i = 0; i < pacientes.length; i++){
     //valores booleanos
     var pesoValido = true;
     var alturaValida = true;
-    
-    //alerta caso peso e altura sejam invalidos
-    if(peso <= 0 || peso >= 1000 ){
-        var pesoValido = false;
-         alert("peso invalido!");
-      }
-    
-    if (altura <= 0 || altura >= 3.00 ){
-        var alturaValida = false;
-        alert("altura invalida!")
-     }
+
      if(pesoValido && alturaValida)
         {var tdIMC = paciente.querySelector(".info-imc");
         tdIMC.textContent = IMC.toFixed(2);
+        
     }
+    //alerta caso peso e altura sejam invalidos
+    if(peso <= 0 || peso >= 1000 ){
+        console.log("peso invalido!");
+        var pesoValido = false;
+         tdIMC.textContent = "peso invalido";
+         paciente.classList.add("paciente-invalido")
+      }  
+    if (altura <= 0 || altura >= 3.00 ){
+        alert("altura invalida!")
+        var alturaValida = false;
+        tdIMC.textContent = "altura invalida";
+        paciente.classList.add("paciente-invalido")
+     }
     
 }
 
