@@ -37,12 +37,17 @@ for(var i = 0; i < pacientes.length; i++){
          paciente.classList.add("paciente-invalido")
       }  
     if (altura <= 0 || altura >= 3.00 ){
-        alert("altura invalida!")
+        alert("altura invalida!");
         var alturaValida = false;
         tdIMC.textContent = "altura invalida";
         paciente.classList.add("paciente-invalido")
      }
     
 }
+
+
+titulo.addEventListener('click', function(){
+    alert("clicou nessa bomba");
+});
 
 
