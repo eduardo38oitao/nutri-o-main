@@ -2,14 +2,13 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title>Aparecida Nutrição</title>
+		<title>duh Nutrição</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
-	<script>
-		
-	</script>
+	
+
 	<body>
 		<header>
 			<div class="container">
@@ -18,7 +17,10 @@
 		</header>
 		<main>
 			<section class="container">
-				<h2 class="titulo-segundario">Meus Clientes</h2>
+				<h2 class="titulo_secundario">Meus Clientes</h2>
+
+				<label for= "filtrar-tabela">filtre:</label>
+				<input type="text" name="filtro"id="filtrar-tabela" placeholder="digite o nome do paciente.">
 				<table>
 					<thead>
 						<tr>
@@ -30,7 +32,7 @@
 						</tr>
 					</thead>
 					<tbody id="tabela-pacientes">
-						<tr class="paciente" id="primeiro-paciente">
+						<tr class="paciente" id="primeiro_paciente">
 							<td class="info-nome">Paulo</td>
 							<td class="info-peso">100</td>
 							<td class="info-altura">2.00</td>
@@ -75,6 +77,10 @@
 		</main>
 		<section class="container">
 			<h2 id="titulo-form">Adicionar novo paciente</h2>
+			<ul id="mensagens-erro">
+				<li></li>
+				<li></li>
+			</ul>
 			<form id="form-adiciona">
 				<div class="grupo">
 					<label for="nome">Nome:</label>
@@ -96,7 +102,10 @@
 				<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
 			</form>
 		</section>
-		<script src="principal.js"> </script>
+		<script src="calcula-imc.js"></script>
+		<script src="formulario.js"></script>
+		<script src="remove-paciente.js"></script>
+		<script src="filtrar.js"></script>
 
 	</body>
 </html>
